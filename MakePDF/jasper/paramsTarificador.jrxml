@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="paramsTarificador2" language="groovy" columnCount="3" printOrder="Horizontal" pageWidth="555" pageHeight="802" columnWidth="185" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.1269722013523664"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="xPath">
+		<![CDATA[]]>
+	</queryString>
+	<field name="_THIS" class="java.lang.String"/>
+	<variable name="clave" class="java.util.Collection">
+		<variableExpression><![CDATA[$F{_THIS}.split(":")]]></variableExpression>
+		<initialValueExpression><![CDATA[]]></initialValueExpression>
+	</variable>
+	<title>
+		<band height="30">
+			<elementGroup>
+				<rectangle>
+					<reportElement x="0" y="0" width="555" height="18" isRemoveLineWhenBlank="true" forecolor="#CCCCCC" backcolor="#CCCCCC"/>
+				</rectangle>
+				<textField>
+					<reportElement x="0" y="1" width="555" height="14" isRemoveLineWhenBlank="true"/>
+					<textElement textAlignment="Center" lineSpacing="Single">
+						<font size="11"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$R{informacionCalculador}]]></textFieldExpression>
+				</textField>
+			</elementGroup>
+		</band>
+	</title>
+	<detail>
+		<band height="23" splitType="Stretch">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="105" height="20" isPrintWhenDetailOverflows="true"/>
+				<textElement lineSpacing="Single">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{clave}.get(0).trim()+" :"]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="105" y="0" width="80" height="20" isPrintWhenDetailOverflows="true"/>
+				<textElement lineSpacing="Single">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$V{clave}.get(1)]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

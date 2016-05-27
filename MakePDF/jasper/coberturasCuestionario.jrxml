@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="coberturasCuestionario" language="groovy" pageWidth="355" pageHeight="802" columnWidth="355" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="d67237ab-5dbf-4abf-8b76-dffadf44da09">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="dataset1" uuid="7cfe29c5-2892-4552-858c-b5ee826d5222">
+		<queryString language="xPath">
+			<![CDATA[/benefit/exclusions/annex]]>
+		</queryString>
+		<field name="text" class="java.lang.String">
+			<fieldDescription><![CDATA[text]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="dataset2" uuid="cfc8d4a1-ff90-4911-91f2-0b53d80251db">
+		<queryString language="xPath">
+			<![CDATA[/benefit/medicalReports/annex]]>
+		</queryString>
+		<field name="text" class="java.lang.String">
+			<fieldDescription><![CDATA[text]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="dataset3" uuid="2213a3b3-4834-4096-8325-1e86b5301f9a">
+		<queryString language="xPath">
+			<![CDATA[/benefit/medicalTests/annex]]>
+		</queryString>
+		<field name="text" class="java.lang.String">
+			<fieldDescription><![CDATA[text]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="dataset4" uuid="ee759e5c-b928-49a2-9e46-97067ec2cbdc">
+		<queryString language="xPath">
+			<![CDATA[/benefit/temporalLoadings/annex]]>
+		</queryString>
+		<field name="text" class="java.lang.String">
+			<fieldDescription><![CDATA[text]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="dataset5" uuid="45a5d230-e0e4-4050-99b8-fa5e2d8e7524">
+		<queryString language="xPath">
+			<![CDATA[/benefit/additionalNotes/annex]]>
+		</queryString>
+		<field name="text" class="java.lang.String">
+			<fieldDescription><![CDATA[text]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="dataset0" uuid="3d67d7cf-40d8-4e06-9085-ae3fc8505512">
+		<queryString language="xPath">
+			<![CDATA[/benefit/values]]>
+		</queryString>
+		<field name="value" class="java.lang.String">
+			<fieldDescription><![CDATA[/value]]></fieldDescription>
+		</field>
+		<field name="value_1" class="java.util.Collection">
+			<fieldDescription><![CDATA[/benefit/values/value]]></fieldDescription>
+		</field>
+		<variable name="variable1" class="java.lang.String">
+			<variableExpression><![CDATA[$F{value}]]></variableExpression>
+		</variable>
+	</subDataset>
+	<subDataset name="dataset6" uuid="ff951d25-98f9-4521-ad18-08dff2ab748d">
+		<queryString language="xPath">
+			<![CDATA[/values/value]]>
+		</queryString>
+	</subDataset>
+	<subDataset name="dataset7" uuid="f4ec418f-6771-4e07-a4c2-8a146ddf5436">
+		<queryString language="xPath">
+			<![CDATA[/value]]>
+		</queryString>
+		<field name="value" class="java.lang.String">
+			<fieldDescription><![CDATA[/value]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/home/pepe/pintaTuwV2/"]]></defaultValueExpression>
+	</parameter>
+	<queryString language="xPath">
+		<![CDATA[/benefit]]>
+	</queryString>
+	<field name="benefitName" class="java.lang.String">
+		<fieldDescription><![CDATA[benefitName]]></fieldDescription>
+	</field>
+	<field name="benefitName_1" class="java.lang.String">
+		<fieldDescription><![CDATA[benefitName]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="80" splitType="Immediate">
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="e8883715-5e4f-4e83-9c2e-fa7bce6aa488" x="0" y="0" width="355" height="11" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Justified" markup="html">
+					<font size="7" isBold="true" isPdfEmbedded="false"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{cobertura}+" "+$F{benefitName}.replaceAll("<","&lt;").replaceAll("&lt;br /","<br /")+" : "]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement uuid="1640f632-91d7-4729-9bf8-2fbd06e4a1da" positionType="Float" x="0" y="23" width="355" height="11" isRemoveLineWhenBlank="true"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="dataset1" uuid="97adf9d4-9232-4801-bdf9-7b14d202fa09">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("/benefit/exclusions/annex")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="11" width="355">
+						<textField isStretchWithOverflow="true">
+							<reportElement uuid="c976478d-9881-43bf-940e-7d41a7bf5c80" x="0" y="0" width="355" height="11" isRemoveLineWhenBlank="true"/>
+							<textElement textAlignment="Justified" markup="html">
+								<font size="7"/>
+								<paragraph lineSpacing="Single"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{text}.replaceAll("<","&lt;").replaceAll("&lt;br /","<br /")]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<componentElement>
+				<reportElement uuid="667956a8-4659-4d14-a178-524ddb22bc30" positionType="Float" x="0" y="34" width="355" height="11" isRemoveLineWhenBlank="true"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="dataset2" uuid="4bb344f5-c81e-449e-94ac-3d2d43841220">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("/benefit/medicalReports/annex")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="11" width="355">
+						<textField isStretchWithOverflow="true">
+							<reportElement uuid="6c5a1802-2df0-4d2e-9b37-8a72c949dfbe" x="0" y="0" width="355" height="11"/>
+							<textElement textAlignment="Justified" markup="html">
+								<font size="7"/>
+								<paragraph lineSpacing="Single"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{text}.replaceAll("<","&lt;").replaceAll("&lt;br /","<br /")]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<componentElement>
+				<reportElement uuid="5ef598da-f09f-44dc-8fe4-c65b55a3d03f" positionType="Float" x="0" y="45" width="355" height="11" isRemoveLineWhenBlank="true"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="dataset3" uuid="38265604-6812-42a4-8e4c-152861863126">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("/benefit/medicalTests/annex")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="11" width="355">
+						<textField isStretchWithOverflow="true">
+							<reportElement uuid="efabc6fd-d91e-4ba3-a976-3d29943dbc0c" x="0" y="0" width="355" height="11" isRemoveLineWhenBlank="true"/>
+							<textElement textAlignment="Justified" markup="html">
+								<font size="7"/>
+								<paragraph lineSpacing="Single"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{text}.replaceAll("<","&lt;").replaceAll("&lt;br /","<br /")]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<componentElement>
+				<reportElement uuid="3fdec562-e0d2-471f-8771-85c5bfdd2029" positionType="Float" x="0" y="56" width="355" height="11" isRemoveLineWhenBlank="true"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="dataset4" uuid="306de354-904d-4089-bf85-3802b0f78e02">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("/benefit/temporalLoadings/annex")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="11" width="355">
+						<textField isStretchWithOverflow="true">
+							<reportElement uuid="25e39b0e-8d36-472a-b782-6f2a0ae47efd" x="0" y="0" width="355" height="11" isRemoveLineWhenBlank="true"/>
+							<textElement textAlignment="Justified" markup="html">
+								<font size="7"/>
+								<paragraph lineSpacing="Single"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{text}.replaceAll("<","&lt;").replaceAll("&lt;br /","<br /")]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<componentElement>
+				<reportElement uuid="00ed8e45-51a8-4be0-991f-eab0276349d6" positionType="Float" x="0" y="67" width="355" height="11" isRemoveLineWhenBlank="true"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="dataset5" uuid="442a17cf-bacb-4793-a83c-bf154ddf1174">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("/benefit/additionalNotes/annex")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="11" width="355">
+						<textField isStretchWithOverflow="true">
+							<reportElement uuid="ae17f190-52df-49cd-b105-e82719a83688" x="0" y="0" width="355" height="11" isRemoveLineWhenBlank="true"/>
+							<textElement textAlignment="Justified" markup="html">
+								<font size="7"/>
+								<paragraph lineSpacing="Single"/>
+							</textElement>
+							<textFieldExpression><![CDATA[$F{text}.replaceAll("<","&lt;").replaceAll("&lt;br /","<br /")]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<componentElement>
+				<reportElement uuid="00725aa1-ec3c-4659-95df-ca3228129910" positionType="Float" x="0" y="11" width="355" height="11" isRemoveLineWhenBlank="true"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" printOrder="Vertical">
+					<datasetRun subDataset="dataset0" uuid="924e9299-a984-4158-93f0-2c1b07ec967f">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("/benefit/values")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="11" width="355">
+						<componentElement>
+							<reportElement uuid="b3215eed-647e-4417-8f44-3badca1be6bd" x="0" y="0" width="355" height="11"/>
+							<jr:list printOrder="Vertical">
+								<datasetRun subDataset="dataset6" uuid="b4361afc-6a6e-46c3-8a0f-7f614ec84ea7">
+									<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("/values/value")]]></dataSourceExpression>
+								</datasetRun>
+								<jr:listContents height="11" width="355">
+									<componentElement>
+										<reportElement uuid="65a344ef-77c2-4ee3-86cb-5d784604e2b8" x="0" y="0" width="355" height="11"/>
+										<jr:list printOrder="Vertical">
+											<datasetRun subDataset="dataset7" uuid="4e9cbf9f-f946-4ccb-b101-aaea8e2b978d">
+												<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("/value")]]></dataSourceExpression>
+											</datasetRun>
+											<jr:listContents height="11" width="355">
+												<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+													<reportElement uuid="4ee38c7e-3dc7-488c-b163-edfaad2f345b" x="0" y="0" width="355" height="11" isRemoveLineWhenBlank="true"/>
+													<textElement markup="html">
+														<font size="7"/>
+														<paragraph lineSpacing="Single"/>
+													</textElement>
+													<textFieldExpression><![CDATA[$F{value}]]></textFieldExpression>
+												</textField>
+											</jr:listContents>
+										</jr:list>
+									</componentElement>
+								</jr:listContents>
+							</jr:list>
+						</componentElement>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+	</detail>
+</jasperReport>

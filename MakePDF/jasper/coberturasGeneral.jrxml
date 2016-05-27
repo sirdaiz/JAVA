@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="coberturasGeneral" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="dataset1">
+		<queryString language="xPath">
+			<![CDATA[/benefit/exclusions/annex]]>
+		</queryString>
+		<field name="text" class="java.lang.String">
+			<fieldDescription><![CDATA[text]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="dataset2">
+		<queryString language="xPath">
+			<![CDATA[/benefit/medicalReports/annex]]>
+		</queryString>
+		<field name="text" class="java.lang.String">
+			<fieldDescription><![CDATA[text]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="dataset3">
+		<queryString language="xPath">
+			<![CDATA[/benefit/medicalTests/annex]]>
+		</queryString>
+		<field name="text" class="java.lang.String">
+			<fieldDescription><![CDATA[text]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="dataset4">
+		<queryString language="xPath">
+			<![CDATA[/benefit/temporalLoadings/annex]]>
+		</queryString>
+		<field name="text" class="java.lang.String">
+			<fieldDescription><![CDATA[text]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="dataset5">
+		<queryString language="xPath">
+			<![CDATA[/benefit/additionalNotes/annex]]>
+		</queryString>
+		<field name="text" class="java.lang.String">
+			<fieldDescription><![CDATA[text]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="dataset0">
+		<queryString language="xPath">
+			<![CDATA[/benefit/values]]>
+		</queryString>
+		<field name="value" class="java.lang.String">
+			<fieldDescription><![CDATA[/value]]></fieldDescription>
+		</field>
+		<field name="value_1" class="java.util.Collection">
+			<fieldDescription><![CDATA[/benefit/values/value]]></fieldDescription>
+		</field>
+		<variable name="variable1" class="java.lang.String">
+			<variableExpression><![CDATA[$F{value}]]></variableExpression>
+		</variable>
+	</subDataset>
+	<subDataset name="dataset6">
+		<queryString language="xPath">
+			<![CDATA[/values/value]]>
+		</queryString>
+	</subDataset>
+	<subDataset name="dataset7">
+		<queryString language="xPath">
+			<![CDATA[/value]]>
+		</queryString>
+		<field name="value" class="java.lang.String">
+			<fieldDescription><![CDATA[/value]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/home/pepe/pintaTuwV2/"]]></defaultValueExpression>
+	</parameter>
+	<queryString language="xPath">
+		<![CDATA[/benefit]]>
+	</queryString>
+	<field name="benefitName" class="java.lang.String">
+		<fieldDescription><![CDATA[benefitName]]></fieldDescription>
+	</field>
+	<field name="benefitName_1" class="java.lang.String">
+		<fieldDescription><![CDATA[benefitName]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="80" splitType="Immediate">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="0" width="550" height="11" isRemoveLineWhenBlank="true"/>
+				<textElement lineSpacing="Single">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{cobertura}+" "+$F{benefitName}+" : "]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement positionType="Float" x="0" y="23" width="555" height="11" isRemoveLineWhenBlank="true"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="dataset1">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("/benefit/exclusions/annex")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="11" width="555">
+						<textField isStretchWithOverflow="true">
+							<reportElement x="0" y="0" width="550" height="11" isRemoveLineWhenBlank="true"/>
+							<textElement textAlignment="Justified" lineSpacing="Single" markup="html">
+								<font size="9"/>
+							</textElement>
+							<textFieldExpression class="java.lang.String"><![CDATA[$F{text}.replaceAll("<","&lt;").replaceAll("&lt;br /","<br /")]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<componentElement>
+				<reportElement positionType="Float" x="0" y="34" width="555" height="11" isRemoveLineWhenBlank="true"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="dataset2">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("/benefit/medicalReports/annex")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="11" width="555">
+						<textField isStretchWithOverflow="true">
+							<reportElement x="0" y="0" width="550" height="11"/>
+							<textElement textAlignment="Justified" lineSpacing="Single" markup="html">
+								<font size="9"/>
+							</textElement>
+							<textFieldExpression class="java.lang.String"><![CDATA[$F{text}.replaceAll("<","&lt;").replaceAll("&lt;br /","<br /")]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<componentElement>
+				<reportElement positionType="Float" x="0" y="45" width="555" height="11" isRemoveLineWhenBlank="true"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="dataset3">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("/benefit/medicalTests/annex")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="11" width="555">
+						<textField isStretchWithOverflow="true">
+							<reportElement x="0" y="0" width="550" height="11" isRemoveLineWhenBlank="true"/>
+							<textElement textAlignment="Justified" lineSpacing="Single" markup="html">
+								<font size="9"/>
+							</textElement>
+							<textFieldExpression class="java.lang.String"><![CDATA[$F{text}.replaceAll("<","&lt;").replaceAll("&lt;br /","<br /")]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<componentElement>
+				<reportElement positionType="Float" x="0" y="56" width="555" height="11" isRemoveLineWhenBlank="true"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="dataset4">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("/benefit/temporalLoadings/annex")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="11" width="555">
+						<textField isStretchWithOverflow="true">
+							<reportElement x="0" y="0" width="550" height="11" isRemoveLineWhenBlank="true"/>
+							<textElement textAlignment="Justified" lineSpacing="Single" markup="html">
+								<font size="9"/>
+							</textElement>
+							<textFieldExpression class="java.lang.String"><![CDATA[$F{text}.replaceAll("<","&lt;").replaceAll("&lt;br /","<br /")]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<componentElement>
+				<reportElement positionType="Float" x="0" y="67" width="555" height="11" isRemoveLineWhenBlank="true"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="dataset5">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("/benefit/additionalNotes/annex")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="11" width="555">
+						<textField isStretchWithOverflow="true">
+							<reportElement x="0" y="0" width="550" height="11" isRemoveLineWhenBlank="true"/>
+							<textElement textAlignment="Justified" lineSpacing="Single" markup="html">
+								<font size="9"/>
+							</textElement>
+							<textFieldExpression class="java.lang.String"><![CDATA[$F{text}.replaceAll("<","&lt;").replaceAll("&lt;br /","<br /")]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+			<componentElement>
+				<reportElement positionType="Float" x="0" y="11" width="550" height="11" isRemoveLineWhenBlank="true"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="dataset0">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("/benefit/values")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="11" width="550">
+						<componentElement>
+							<reportElement x="0" y="0" width="550" height="11"/>
+							<jr:list>
+								<datasetRun subDataset="dataset6">
+									<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("/values/value")]]></dataSourceExpression>
+								</datasetRun>
+								<jr:listContents height="11" width="550">
+									<componentElement>
+										<reportElement x="0" y="0" width="550" height="11"/>
+										<jr:list>
+											<datasetRun subDataset="dataset7">
+												<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("/value")]]></dataSourceExpression>
+											</datasetRun>
+											<jr:listContents height="11" width="550">
+												<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+													<reportElement x="0" y="0" width="550" height="11" isRemoveLineWhenBlank="true"/>
+													<textElement lineSpacing="Single" markup="html">
+														<font size="9"/>
+													</textElement>
+													<textFieldExpression class="java.lang.String"><![CDATA[$F{value}]]></textFieldExpression>
+												</textField>
+											</jr:listContents>
+										</jr:list>
+									</componentElement>
+								</jr:listContents>
+							</jr:list>
+						</componentElement>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+	</detail>
+</jasperReport>

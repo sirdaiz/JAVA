@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="cuestionarioSeccion" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="seccion">
+		<queryString language="xPath">
+			<![CDATA[/form/executedSections/section]]>
+		</queryString>
+		<field name="valorTextoS" class="java.lang.String">
+			<fieldDescription><![CDATA[title]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="cuestion">
+		<queryString language="xPath">
+			<![CDATA[/section/executedQuestions/executedQuestion]]>
+		</queryString>
+		<field name="valorTexto" class="java.lang.String">
+			<fieldDescription><![CDATA[questionText]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="respuesta">
+		<queryString language="xPath">
+			<![CDATA[/executedQuestion/answers/answer]]>
+		</queryString>
+		<field name="valor" class="java.lang.String">
+			<fieldDescription><![CDATA[/executedQuestion/answers/answer]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="agente">
+		<queryString language="xPath">
+			<![CDATA[/tuw/tuwMetaData/agents]]>
+		</queryString>
+		<field name="agente" class="java.lang.String">
+			<fieldDescription><![CDATA[agent]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="cuestionario">
+		<queryString language="xPath">
+			<![CDATA[/tuw/questionnaire/form]]>
+		</queryString>
+		<field name="valorTexto" class="java.lang.String">
+			<fieldDescription><![CDATA[textosList/texto/valorTexto]]></fieldDescription>
+		</field>
+		<field name="executedSections" class="java.lang.String">
+			<fieldDescription><![CDATA[executedSections]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="texto">
+		<queryString language="xPath">
+			<![CDATA[/form]]>
+		</queryString>
+		<field name="valorTexto" class="java.lang.String">
+			<fieldDescription><![CDATA[title]]></fieldDescription>
+		</field>
+		<field name="idTipoTexto" class="java.lang.String">
+			<fieldDescription><![CDATA[idTipoTexto]]></fieldDescription>
+		</field>
+		<field name="executedSections" class="java.lang.String">
+			<fieldDescription><![CDATA[executedSections]]></fieldDescription>
+		</field>
+	</subDataset>
+	<subDataset name="dataset1">
+		<queryString language="xPath">
+			<![CDATA[/answers/answer]]>
+		</queryString>
+	</subDataset>
+	<subDataset name="dataset2">
+		<queryString language="xPath">
+			<![CDATA[/answer]]>
+		</queryString>
+		<field name="valor" class="java.lang.String">
+			<fieldDescription><![CDATA[/answer]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="fecha" class="java.lang.String"/>
+	<queryString language="xPath">
+		<![CDATA[/tuw]]>
+	</queryString>
+	<field name="cuestionariosModificados" class="java.lang.String">
+		<fieldDescription><![CDATA[/tuw/modifications/form]]></fieldDescription>
+	</field>
+	<field name="fechaHoraEntrevista" class="java.lang.String">
+		<fieldDescription><![CDATA[/tuw/tuwMetaData/sessionInitDate]]></fieldDescription>
+	</field>
+	<field name="seccionesList" class="java.lang.String">
+		<fieldDescription><![CDATA[questionnaire/form]]></fieldDescription>
+	</field>
+	<field name="seccionCuestion" class="java.lang.String">
+		<fieldDescription><![CDATA[questionnaire/form/executedSections/section]]></fieldDescription>
+	</field>
+	<pageHeader>
+		<band height="62">
+			<rectangle>
+				<reportElement x="0" y="0" width="555" height="58"/>
+			</rectangle>
+			<textField>
+				<reportElement x="149" y="3" width="261" height="16"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single">
+					<font size="12" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{entrevistaTeleseleccion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="9" y="20" width="149" height="16"/>
+				<textElement lineSpacing="Single"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{horaRealizacion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="9" y="41" width="149" height="16"/>
+				<textElement lineSpacing="Single"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{realizadaPor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="158" y="20" width="394" height="16"/>
+				<textElement lineSpacing="Single"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{fechaHoraEntrevista}]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement x="158" y="41" width="394" height="16"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="agente">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("/tuw/tuwMetaData/agents")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="16" width="394">
+						<textField>
+							<reportElement x="0" y="0" width="393" height="16"/>
+							<textElement lineSpacing="Single"/>
+							<textFieldExpression class="java.lang.String"><![CDATA[$F{agente}]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="58">
+			<componentElement>
+				<reportElement x="0" y="6" width="555" height="47" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{seccionesList}!=null]]></printWhenExpression>
+				</reportElement>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="cuestionario">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("/tuw/questionnaire/form")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="47" width="555">
+						<componentElement>
+							<reportElement x="0" y="13" width="555" height="25" isRemoveLineWhenBlank="true"/>
+							<jr:list>
+								<datasetRun subDataset="seccion">
+									<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("/form/executedSections/section")]]></dataSourceExpression>
+								</datasetRun>
+								<jr:listContents height="25" width="555">
+									<textField isStretchWithOverflow="true" isBlankWhenNull="false">
+										<reportElement x="5" y="0" width="260" height="10" isRemoveLineWhenBlank="true">
+											<printWhenExpression><![CDATA[$F{valorTextoS}!=null]]></printWhenExpression>
+										</reportElement>
+										<textElement lineSpacing="Single">
+											<font size="8" isBold="true" isItalic="true" pdfFontName="Helvetica-Bold"/>
+										</textElement>
+										<textFieldExpression class="java.lang.String"><![CDATA[$F{valorTextoS}]]></textFieldExpression>
+									</textField>
+									<componentElement>
+										<reportElement x="10" y="12" width="545" height="11" isRemoveLineWhenBlank="true"/>
+										<jr:list ignoreWidth="true">
+											<datasetRun subDataset="cuestion">
+												<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("/section/executedQuestions/executedQuestion")]]></dataSourceExpression>
+											</datasetRun>
+											<jr:listContents height="11" width="545">
+												<textField isStretchWithOverflow="true">
+													<reportElement x="0" y="0" width="275" height="10" isPrintWhenDetailOverflows="true"/>
+													<textElement textAlignment="Justified" lineSpacing="Single">
+														<font size="7"/>
+													</textElement>
+													<textFieldExpression class="java.lang.String"><![CDATA[$F{valorTexto}]]></textFieldExpression>
+												</textField>
+												<componentElement>
+													<reportElement x="280" y="0" width="260" height="10" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true"/>
+													<jr:list>
+														<datasetRun subDataset="respuesta">
+															<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("/executedQuestion/answers")]]></dataSourceExpression>
+														</datasetRun>
+														<jr:listContents height="10" width="260">
+															<componentElement>
+																<reportElement x="0" y="0" width="260" height="10"/>
+																<jr:list>
+																	<datasetRun subDataset="dataset1">
+																		<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("/answers/answer")]]></dataSourceExpression>
+																	</datasetRun>
+																	<jr:listContents height="10" width="260">
+																		<componentElement>
+																			<reportElement x="0" y="0" width="260" height="10"/>
+																			<jr:list>
+																				<datasetRun subDataset="dataset2">
+																					<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("/answer")]]></dataSourceExpression>
+																				</datasetRun>
+																				<jr:listContents height="10" width="260">
+																					<textField isStretchWithOverflow="true">
+																						<reportElement x="0" y="0" width="260" height="10" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true"/>
+																						<textElement textAlignment="Justified" lineSpacing="Single">
+																							<font size="7"/>
+																						</textElement>
+																						<textFieldExpression class="java.lang.String"><![CDATA[$F{valor}]]></textFieldExpression>
+																					</textField>
+																				</jr:listContents>
+																			</jr:list>
+																		</componentElement>
+																	</jr:listContents>
+																</jr:list>
+															</componentElement>
+														</jr:listContents>
+													</jr:list>
+												</componentElement>
+											</jr:listContents>
+										</jr:list>
+									</componentElement>
+								</jr:listContents>
+							</jr:list>
+						</componentElement>
+						<componentElement>
+							<reportElement x="0" y="0" width="520" height="12" isRemoveLineWhenBlank="true">
+								<printWhenExpression><![CDATA[$F{executedSections}!=null]]></printWhenExpression>
+							</reportElement>
+							<jr:list>
+								<datasetRun subDataset="texto">
+									<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("/form")]]></dataSourceExpression>
+								</datasetRun>
+								<jr:listContents height="12" width="520">
+									<textField isStretchWithOverflow="true">
+										<reportElement x="0" y="0" width="500" height="12" isPrintWhenDetailOverflows="true"/>
+										<textElement lineSpacing="Single">
+											<font size="10" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+										</textElement>
+										<textFieldExpression class="java.lang.String"><![CDATA[$F{valorTexto}]]></textFieldExpression>
+									</textField>
+								</jr:listContents>
+							</jr:list>
+						</componentElement>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+	</detail>
+	<lastPageFooter>
+		<band height="27" splitType="Immediate">
+			<textField>
+				<reportElement x="149" y="3" width="261" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" lineSpacing="Single" markup="styled">
+					<font size="9" isBold="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{fecha}]]></textFieldExpression>
+			</textField>
+		</band>
+	</lastPageFooter>
+</jasperReport>

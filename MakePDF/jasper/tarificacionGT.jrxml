@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="tarificacionGT" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="dataset1">
+		<parameter name="coberturasGeneralGT" class="java.io.InputStream">
+			<defaultValueExpression><![CDATA[]]></defaultValueExpression>
+		</parameter>
+		<queryString language="xPath">
+			<![CDATA[/thematicGroup]]>
+		</queryString>
+		<field name="nombre" class="java.lang.String">
+			<fieldDescription><![CDATA[name]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<parameter name="coberturasGeneralGT" class="java.io.InputStream"/>
+	<queryString language="xPath">
+		<![CDATA[/tuw/thematicGroups/thematicGroup]]>
+	</queryString>
+	<field name="nombre" class="java.lang.String">
+		<fieldDescription><![CDATA[ratings]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="68">
+			<rectangle>
+				<reportElement positionType="Float" x="1" y="10" width="555" height="48" isRemoveLineWhenBlank="true"/>
+			</rectangle>
+			<textField>
+				<reportElement positionType="Float" x="11" y="30" width="535" height="28" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Justified" lineSpacing="Single">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{textoTarificacionCobertura}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement positionType="Float" x="183" y="11" width="201" height="18" isRemoveLineWhenBlank="true"/>
+				<textElement textAlignment="Justified" lineSpacing="Single">
+					<font isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$R{tarificacionCobertura}]]></textFieldExpression>
+			</textField>
+			<break>
+				<reportElement x="0" y="4" width="100" height="1"/>
+			</break>
+		</band>
+	</title>
+	<detail>
+		<band height="42">
+			<componentElement>
+				<reportElement x="0" y="3" width="555" height="28"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="dataset1">
+						<datasetParameter name="coberturasGeneralGT">
+							<datasetParameterExpression><![CDATA[$P{coberturasGeneralGT}]]></datasetParameterExpression>
+						</datasetParameter>
+						<datasetParameter name="REPORT_RESOURCE_BUNDLE">
+							<datasetParameterExpression><![CDATA[$P{REPORT_RESOURCE_BUNDLE}]]></datasetParameterExpression>
+						</datasetParameter>
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("/thematicGroup")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="28" width="555">
+						<textField>
+							<reportElement x="0" y="0" width="555" height="16" isRemoveLineWhenBlank="true">
+								<printWhenExpression><![CDATA[$F{nombre}!=null]]></printWhenExpression>
+							</reportElement>
+							<textElement lineSpacing="Single" markup="styled">
+								<font size="12" isBold="true" isUnderline="true" pdfFontName="Helvetica-Bold" isPdfEmbedded="true"/>
+							</textElement>
+							<textFieldExpression class="java.lang.String"><![CDATA[$F{nombre}!=null && $F{nombre}.isEmpty()!=true ? $F{nombre}:""]]></textFieldExpression>
+						</textField>
+						<subreport isUsingCache="true">
+							<reportElement positionType="Float" x="0" y="16" width="555" height="12" isRemoveLineWhenBlank="true"/>
+							<subreportParameter name="SUBREPORT_DIR"/>
+							<subreportParameter name="REPORT_RESOURCE_BUNDLE">
+								<subreportParameterExpression><![CDATA[$P{REPORT_RESOURCE_BUNDLE}]]></subreportParameterExpression>
+							</subreportParameter>
+							<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("/thematicGroup/ratings/benefit")]]></dataSourceExpression>
+							<subreportExpression class="java.io.InputStream"><![CDATA[$P{coberturasGeneralGT}]]></subreportExpression>
+						</subreport>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+	</detail>
+</jasperReport>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="coberturasContratadas" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="b64168f8-fb2d-432e-a25c-5421beec0896">
+	<property name="ireport.zoom" value="1.5"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/home/pepe/pintaTuwV2/"]]></defaultValueExpression>
+	</parameter>
+	<queryString language="xPath">
+		<![CDATA[/benefit]]>
+	</queryString>
+	<field name="benefitName" class="java.lang.String">
+		<fieldDescription><![CDATA[benefitName]]></fieldDescription>
+	</field>
+	<field name="benefitCapital" class="java.lang.String">
+		<fieldDescription><![CDATA[benefitCapital]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="11" splitType="Immediate">
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="c97ddfed-3b1d-4929-b5ec-ebeb9eef28ba" x="0" y="0" width="205" height="11" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{cobertura}+" "+$F{benefitName}+" : "]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement uuid="96a72753-dba6-428d-8852-b5057a946928" x="205" y="0" width="350" height="11" isRemoveLineWhenBlank="true" isPrintWhenDetailOverflows="true"/>
+				<textElement>
+					<font size="9" isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{benefitCapital}!=null?$F{benefitCapital}:""]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>

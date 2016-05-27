@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="tarificacionGeneral" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="dataset1">
+		<queryString language="xPath">
+			<![CDATA[/entrevistaServicioFichero/tarificacionesGeneralesList/tarificacionGeneral/mapAttachmentsByType/item]]>
+		</queryString>
+		<field name="valorTexto" class="java.lang.String">
+			<fieldDescription><![CDATA[value/texto/valorTexto]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA[""]]></defaultValueExpression>
+	</parameter>
+	<queryString language="xPath">
+		<![CDATA[/entrevistaServicioFichero/tarificacionesGeneralesList/tarificacionGeneral]]>
+	</queryString>
+	<field name="tipoConclusionCRM" class="java.lang.String">
+		<fieldDescription><![CDATA[conclusion/nombreConclusionCRM]]></fieldDescription>
+	</field>
+	<field name="nombreCoberturaCRM" class="java.lang.String">
+		<fieldDescription><![CDATA[nombreCoberturaCRM]]></fieldDescription>
+	</field>
+	<field name="valorTexto" class="java.lang.String">
+		<fieldDescription><![CDATA[mapAttachmentsByType/item/value/texto/valorTexto]]></fieldDescription>
+	</field>
+	<field name="mapAttachmentsByType" class="java.lang.String">
+		<fieldDescription><![CDATA[mapAttachmentsByType]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<detail>
+		<band height="54" splitType="Immediate">
+			<textField isStretchWithOverflow="true">
+				<reportElement x="172" y="2" width="375" height="20"/>
+				<textElement lineSpacing="Single"/>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{tipoConclusionCRM}.trim()]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true">
+				<reportElement x="0" y="2" width="172" height="20"/>
+				<textElement lineSpacing="Single">
+					<font size="9" isBold="true"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$F{nombreCoberturaCRM}+" :"]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement x="172" y="22" width="383" height="18" isRemoveLineWhenBlank="true"/>
+				<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+					<datasetRun subDataset="dataset1">
+						<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("/tarificacionGeneral/mapAttachmentsByType/item")]]></dataSourceExpression>
+					</datasetRun>
+					<jr:listContents height="18" width="383">
+						<textField isStretchWithOverflow="true">
+							<reportElement x="0" y="0" width="375" height="18"/>
+							<textElement textAlignment="Justified" lineSpacing="Single">
+								<font size="10"/>
+							</textElement>
+							<textFieldExpression class="java.lang.String"><![CDATA[$F{valorTexto}.trim()]]></textFieldExpression>
+						</textField>
+					</jr:listContents>
+				</jr:list>
+			</componentElement>
+		</band>
+	</detail>
+</jasperReport>

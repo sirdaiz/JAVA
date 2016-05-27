@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="datosGenerales" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="73984aa8-199b-4ded-b5d0-9a8a854eef2e">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<subDataset name="dataset1" uuid="e504f327-81cc-4602-aac0-247ab2cbc3d1">
+		<queryString language="xPath">
+			<![CDATA[/entrevistaServicioFichero/tarifacion]]>
+		</queryString>
+		<field name="tipoConclusionId" class="java.lang.String">
+			<fieldDescription><![CDATA[conclusion/tipoConclusionId]]></fieldDescription>
+		</field>
+		<field name="tipoCoberturaId" class="java.lang.String">
+			<fieldDescription><![CDATA[tipoCoberturaId]]></fieldDescription>
+		</field>
+	</subDataset>
+	<parameter name="SUBREPORT_DIR" class="java.lang.String" isForPrompting="false">
+		<defaultValueExpression><![CDATA["/home/pepe/pintaTuw/"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="datosIniciales" class="java.io.InputStream"/>
+	<parameter name="tarificacionGeneral" class="java.io.InputStream"/>
+	<parameter name="paramsTarificador" class="java.io.InputStream"/>
+	<parameter name="tarificacionCalculador" class="java.io.InputStream"/>
+	<parameter name="tarificacionGT" class="java.io.InputStream"/>
+	<parameter name="cuestionario" class="java.io.InputStream"/>
+	<parameter name="cuestionarioSeccion" class="java.io.InputStream"/>
+	<parameter name="cuestionarioSeccionModificacion" class="java.io.InputStream"/>
+	<parameter name="logoScor" class="java.io.InputStream" isForPrompting="false"/>
+	<parameter name="logoScor2" class="java.lang.Object"/>
+	<parameter name="coberturasGeneral" class="java.io.InputStream"/>
+	<parameter name="coberturasGeneralGT" class="java.io.InputStream"/>
+	<parameter name="coberturasCuestionario" class="java.io.InputStream"/>
+	<parameter name="coberturasGeneralCalculador" class="java.io.InputStream"/>
+	<parameter name="logoCliente" class="java.io.InputStream" isForPrompting="false"/>
+	<parameter name="coberturasContratadas" class="java.io.InputStream"/>
+	<parameter name="calculatorData" class="java.lang.Object" isForPrompting="false"/>
+	<parameter name="fecha" class="java.lang.String"/>
+	<queryString language="xPath">
+		<![CDATA[/tuw]]>
+	</queryString>
+	<field name="producto" class="java.lang.String">
+		<fieldDescription><![CDATA[datosPersonales/producto]]></fieldDescription>
+	</field>
+	<field name="dominio" class="java.lang.String">
+		<fieldDescription><![CDATA[datosPersonales/dominio]]></fieldDescription>
+	</field>
+	<field name="tarificacionesList" class="java.lang.String">
+		<fieldDescription><![CDATA[/tuw/questionnaire/form]]></fieldDescription>
+	</field>
+	<field name="tarificacionesList2" class="java.lang.String">
+		<fieldDescription><![CDATA[cuestionariosList/cuestionario/tarificacionesList]]></fieldDescription>
+	</field>
+	<field name="thematicGroups" class="java.lang.String">
+		<fieldDescription><![CDATA[/tuw/thematicGroups]]></fieldDescription>
+	</field>
+	<field name="executedSections" class="java.lang.String">
+		<fieldDescription><![CDATA[/tuw/questionnaire/form]]></fieldDescription>
+	</field>
+	<field name="parcialRatings" class="java.lang.String">
+		<fieldDescription><![CDATA[/tuw/questionnaire/form/parcialRatings]]></fieldDescription>
+	</field>
+	<field name="codigoExpediente" class="java.lang.String">
+		<fieldDescription><![CDATA[/tuw/generalData/application/dossierCode]]></fieldDescription>
+	</field>
+	<field name="numeroSolicitudCRM" class="java.lang.String">
+		<fieldDescription><![CDATA[/tuw/generalData/application/requestNumber]]></fieldDescription>
+	</field>
+	<field name="riskCalculatorData" class="java.lang.String">
+		<fieldDescription><![CDATA[/tuw/riskCalculatorData]]></fieldDescription>
+	</field>
+	<field name="modifications" class="java.lang.String">
+		<fieldDescription><![CDATA[/tuw/modifications]]></fieldDescription>
+	</field>
+	<field name="euwCodigo" class="java.lang.String">
+		<fieldDescription><![CDATA[/tuw/tuwMetaData/euwReferenceCode]]></fieldDescription>
+	</field>
+	<field name="policyNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[/tuw/generalData/application/policyNumber]]></fieldDescription>
+	</field>
+	<field name="certificateNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[/tuw/generalData/application/certificateNumber]]></fieldDescription>
+	</field>
+	<field name="subpolicyNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[/tuw/generalData/application/subpolicyNumber]]></fieldDescription>
+	</field>
+	<field name="movementNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[/tuw/generalData/application/movementNumber]]></fieldDescription>
+	</field>
+	<variable name="logo" class="java.io.InputStream" resetType="None" incrementType="Page">
+		<variableExpression><![CDATA[$P{logoScor}]]></variableExpression>
+		<initialValueExpression><![CDATA[$P{logoScor}]]></initialValueExpression>
+	</variable>
+	<variable name="logoCliente" class="java.io.InputStream">
+		<variableExpression><![CDATA[$P{logoCliente}]]></variableExpression>
+		<initialValueExpression><![CDATA[$P{logoCliente}]]></initialValueExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="269" splitType="Prevent">
+			<image isUsingCache="true" onErrorType="Blank">
+				<reportElement uuid="4f835240-8455-410c-9c80-0effb8bacd95" x="0" y="8" width="80" height="20"/>
+				<imageExpression><![CDATA[$V{logo}]]></imageExpression>
+			</image>
+			<rectangle>
+				<reportElement uuid="acb4c3d8-defe-4adc-8d47-eb628e7503e2" x="0" y="43" width="555" height="28"/>
+			</rectangle>
+			<textField>
+				<reportElement uuid="13c6479e-0b7a-4c86-b1ec-676b7e149aa9" x="145" y="48" width="248" height="20"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="14" isBold="true" isUnderline="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{informeTeleseleccion}]]></textFieldExpression>
+			</textField>
+			<subreport>
+				<reportElement uuid="a5be6bd7-511c-49d6-9a98-690324586848" x="0" y="81" width="555" height="28" isRemoveLineWhenBlank="true"/>
+				<subreportParameter name="REPORT_RESOURCE_BUNDLE">
+					<subreportParameterExpression><![CDATA[$P{REPORT_RESOURCE_BUNDLE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("/tuw/generalData")]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{datosIniciales}]]></subreportExpression>
+			</subreport>
+			<image hAlign="Right" isUsingCache="true" onErrorType="Blank">
+				<reportElement uuid="9f493e51-ac3f-4115-983e-e686b128d684" x="404" y="0" width="150" height="40"/>
+				<imageExpression><![CDATA[$V{logoCliente}]]></imageExpression>
+			</image>
+			<subreport isUsingCache="true">
+				<reportElement uuid="9b8baf89-9e97-4e04-9646-3a124a28aae3" positionType="Float" x="1" y="116" width="555" height="21" isRemoveLineWhenBlank="true"/>
+				<subreportParameter name="REPORT_RESOURCE_BUNDLE">
+					<subreportParameterExpression><![CDATA[$P{REPORT_RESOURCE_BUNDLE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("/tuw/generalData/application/contractedBenefits/benefit")]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{coberturasContratadas}]]></subreportExpression>
+			</subreport>
+			<subreport isUsingCache="true">
+				<reportElement uuid="415c3ed5-34af-4b60-b2fa-a338b157dc24" positionType="Float" x="0" y="202" width="555" height="28" isRemoveLineWhenBlank="true"/>
+				<subreportParameter name="REPORT_RESOURCE_BUNDLE">
+					<subreportParameterExpression><![CDATA[$P{REPORT_RESOURCE_BUNDLE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("/tuw/finalResult/benefit")]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{coberturasGeneral}]]></subreportExpression>
+			</subreport>
+			<rectangle>
+				<reportElement uuid="3fef40e5-3183-48c2-9df0-a6838d7bd008" positionType="Float" x="1" y="144" width="555" height="48" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{coberturasGeneral}!=null]]></printWhenExpression>
+				</reportElement>
+			</rectangle>
+			<textField>
+				<reportElement uuid="5badb049-f82d-4a24-ab50-0ca7b0458ebb" positionType="Float" x="11" y="164" width="535" height="28" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{coberturasGeneral}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Justified">
+					<font size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{textoTarificacionCobertura}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="010a36cd-3fdb-40fb-b365-fe554791e5bd" positionType="Float" x="183" y="145" width="201" height="18" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$P{coberturasGeneral}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement textAlignment="Justified">
+					<font isBold="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{tarificacionCobertura}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="100" splitType="Stretch">
+			<printWhenExpression><![CDATA[$V{PAGE_NUMBER}.intValue()>1]]></printWhenExpression>
+			<textField>
+				<reportElement uuid="b4ed1be8-ff2f-40e8-9a07-c61b09b5d7f3" x="12" y="44" width="129" height="14"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{numeroExpediente}+" "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="09364b28-804f-4cce-b4c5-b34c47269b65" x="12" y="58" width="129" height="14"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{numeroSolicitud}+" "]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a7e7ba6a-dd59-401e-9b7d-6cd15bb9cbb9" x="143" y="44" width="411" height="14" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{codigoExpediente}!=null?$F{codigoExpediente}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="37131dc3-75e4-4231-964d-a57ef7477fcf" x="143" y="58" width="141" height="14" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{numeroSolicitudCRM}!=null]]></printWhenExpression>
+				</reportElement>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numeroSolicitudCRM}]]></textFieldExpression>
+			</textField>
+			<image isUsingCache="true" onErrorType="Blank" evaluationTime="Band">
+				<reportElement uuid="f6cc2890-eb06-410e-8558-dd028dcc7e54" x="1" y="6" width="80" height="20"/>
+				<imageExpression><![CDATA[$V{logo}]]></imageExpression>
+			</image>
+			<image hAlign="Right" isUsingCache="true" onErrorType="Blank">
+				<reportElement uuid="b9ca2c45-7b39-4fc2-be34-44b53ca9ab96" x="405" y="0" width="150" height="40"/>
+				<imageExpression><![CDATA[$V{logoCliente}]]></imageExpression>
+			</image>
+			<textField>
+				<reportElement uuid="1160c84a-9fba-4397-8e67-ca2c13b87602" x="284" y="58" width="129" height="14"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{euwCodigo}!=null?$R{euwCodigo}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1c40a24d-1a18-4919-a141-a09175cb75c9" x="412" y="58" width="142" height="14" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{euwCodigo}!=null?$F{euwCodigo}:""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="b21b1456-61d4-4b34-97c4-1cb229b0a2b7" x="12" y="72" width="129" height="14"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{policyNumber}!=null?$R{policyNumber}:""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="ceb6bbdf-fb45-4de5-a544-59a82baa652c" x="143" y="72" width="142" height="14" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{policyNumber}!=null?$F{policyNumber}:""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="cb1e39ab-b9d3-41eb-a541-6531701ae950" x="143" y="86" width="142" height="14" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{certificateNumber}!=null?$F{certificateNumber}:""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="991a1ffd-b9b9-4c0f-ad9e-e9246c32ee33" x="12" y="86" width="129" height="14"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{certificateNumber}!=null?$R{certificateNumber}:""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="b776a87e-3008-4c22-8b4a-88f382b855e8" x="412" y="86" width="142" height="14" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{movementNumber}!=null?$F{movementNumber}:""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="9637173a-4dba-412e-8146-6d1c54931f46" x="284" y="86" width="129" height="14"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{movementNumber}!=null?$R{movementNumber}:""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="0d414217-0ad9-440e-aefd-c18f30c48d19" x="412" y="72" width="142" height="14" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subpolicyNumber}!=null?$F{subpolicyNumber}:""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="9dde68df-12fa-4d10-81b2-87a0ad7574c4" x="284" y="72" width="129" height="14"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subpolicyNumber}!=null?$R{subpolicyNumber}:""]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<detail>
+		<band height="326" splitType="Stretch">
+			<break>
+				<reportElement uuid="fd444920-502e-44b8-996b-8c34ad48ff84" positionType="Float" x="0" y="158" width="100" height="1" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{riskCalculatorData}!=null]]></printWhenExpression>
+				</reportElement>
+			</break>
+			<subreport>
+				<reportElement uuid="1c3c2f7d-f7ec-4069-b938-04feba854494" positionType="Float" x="0" y="169" width="555" height="44" isRemoveLineWhenBlank="true"/>
+				<subreportParameter name="SUBREPORT_DIR"/>
+				<subreportParameter name="coberturasGeneral">
+					<subreportParameterExpression><![CDATA[$P{coberturasGeneral}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="REPORT_RESOURCE_BUNDLE">
+					<subreportParameterExpression><![CDATA[$P{REPORT_RESOURCE_BUNDLE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($P{calculatorData})]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{paramsTarificador}]]></subreportExpression>
+			</subreport>
+			<subreport isUsingCache="true">
+				<reportElement uuid="f12317fc-0323-406a-bf47-5690ba50b504" positionType="Float" x="0" y="224" width="555" height="37" isRemoveLineWhenBlank="true"/>
+				<subreportParameter name="coberturasGeneralCalculador">
+					<subreportParameterExpression><![CDATA[$P{coberturasGeneralCalculador}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="REPORT_RESOURCE_BUNDLE">
+					<subreportParameterExpression><![CDATA[$P{REPORT_RESOURCE_BUNDLE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("/tuw/riskCalculatorData/totalResult/benefit")]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{tarificacionCalculador}]]></subreportExpression>
+			</subreport>
+			<subreport isUsingCache="true">
+				<reportElement uuid="3851c25f-9ac3-4a2a-a625-3ead9117ae00" positionType="Float" x="1" y="275" width="555" height="40" isRemoveLineWhenBlank="true"/>
+				<subreportParameter name="coberturasCuestionario">
+					<subreportParameterExpression><![CDATA[$P{coberturasCuestionario}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="REPORT_RESOURCE_BUNDLE">
+					<subreportParameterExpression><![CDATA[$P{REPORT_RESOURCE_BUNDLE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("/tuw/questionnaire/form")]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{cuestionario}]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement uuid="22ad9d7a-5f62-4b46-b9f9-ce3a2fd01d92" positionType="Float" x="0" y="3" width="555" height="43" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{executedSections}!=null]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="SUBREPORT_DIR"/>
+				<subreportParameter name="fecha">
+					<subreportParameterExpression><![CDATA[$P{fecha}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="REPORT_RESOURCE_BUNDLE">
+					<subreportParameterExpression><![CDATA[$P{REPORT_RESOURCE_BUNDLE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("/tuw")]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{cuestionarioSeccion}]]></subreportExpression>
+			</subreport>
+			<subreport>
+				<reportElement uuid="62e060c7-f1a1-4243-82c1-afc7cf7d3ea8" positionType="Float" x="0" y="61" width="555" height="42" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{modifications}!=null]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="SUBREPORT_DIR"/>
+				<subreportParameter name="REPORT_RESOURCE_BUNDLE">
+					<subreportParameterExpression><![CDATA[$P{REPORT_RESOURCE_BUNDLE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("/tuw")]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{cuestionarioSeccionModificacion}]]></subreportExpression>
+			</subreport>
+			<subreport isUsingCache="true">
+				<reportElement uuid="8f130e3a-bea2-4e43-b7c7-8bcbf73f26b2" positionType="Float" x="0" y="111" width="555" height="42" isRemoveLineWhenBlank="true">
+					<printWhenExpression><![CDATA[$F{thematicGroups}!=null]]></printWhenExpression>
+				</reportElement>
+				<subreportParameter name="coberturasGeneralGT">
+					<subreportParameterExpression><![CDATA[$P{coberturasGeneralGT}]]></subreportParameterExpression>
+				</subreportParameter>
+				<subreportParameter name="REPORT_RESOURCE_BUNDLE">
+					<subreportParameterExpression><![CDATA[$P{REPORT_RESOURCE_BUNDLE}]]></subreportParameterExpression>
+				</subreportParameter>
+				<dataSourceExpression><![CDATA[((net.sf.jasperreports.engine.data.JRXmlDataSource)$P{REPORT_DATA_SOURCE}).subDataSource("/tuw/thematicGroups/thematicGroup")]]></dataSourceExpression>
+				<subreportExpression><![CDATA[$P{tarificacionGT}]]></subreportExpression>
+			</subreport>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="62" splitType="Stretch">
+			<textField>
+				<reportElement uuid="d62af409-0bc2-4a72-8892-124883760239" x="0" y="3" width="555" height="14"/>
+				<textElement textAlignment="Center">
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<rectangle>
+				<reportElement uuid="e28eec28-a819-413a-97de-9ca2aaeaabcc" x="0" y="20" width="555" height="38"/>
+			</rectangle>
+			<textField>
+				<reportElement uuid="92dbcf4d-cce4-4b2f-bfaf-125bfd288c97" x="10" y="22" width="535" height="35"/>
+				<textElement textAlignment="Justified" verticalAlignment="Middle">
+					<font size="7"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{responsabilidadScor}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+</jasperReport>

@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<tuw>
+    <tuwMetaData>
+        <agents>
+            <agent>user1 user1</agent>
+        </agents>
+        <sessionInitDate>19/11/2015 11:18</sessionInitDate>
+        <sessionConfirmedEndDate></sessionConfirmedEndDate>
+    </tuwMetaData>
+    <generalData>
+        <candidate>
+            <candidateSTCode>TestThu Nov 19 11:19:20 CET 2015</candidateSTCode>
+            <language>4</language>
+            <name>Test</name>
+            <surname></surname>
+            <birthDate>01/01/1975</birthDate>
+            <fiscalIdentificationNumber>TestThu Nov 19 11:19:20 CET 2015</fiscalIdentificationNumber>
+            <gender>Homme</gender>
+            <address></address>
+            <town></town>
+            <province></province>
+            <postalCode></postalCode>
+        </candidate>
+        <customer>
+            <commercialName>DEMO_FR</commercialName>
+            <address></address>
+            <postalCode></postalCode>
+        </customer>
+        <application>
+            <dossierCode>70901</dossierCode>
+            <dossierSTCode>70901</dossierSTCode>
+            <productName>DEMO_FR_EUW</productName>
+            <type>DEMO_FR_EUW</type>
+            <duration></duration>
+            <sumAssured>22000</sumAssured>
+            <requestNumber>70901</requestNumber>
+            <requestDate>19/11/2015</requestDate>
+            <contractedBenefits>
+                <benefit id="COB5">
+                    <benefitName>Décès</benefitName>
+                    <benefitCapital>22 000</benefitCapital>
+                </benefit>
+                <benefit id="COB2">
+                    <benefitName>Décès accidentel</benefitName>
+                    <benefitCapital>22 000</benefitCapital>
+                </benefit>
+                <benefit id="COB8">
+                    <benefitName>Incapacité &lt; 30 j</benefitName>
+                    <benefitCapital>22 000</benefitCapital>
+                </benefit>
+                <benefit id="COB7">
+                    <benefitName>Incapacité 30-90 j</benefitName>
+                    <benefitCapital>22 000</benefitCapital>
+                </benefit>
+                <benefit id="COB6">
+                    <benefitName>Incapacité &gt; 90 j</benefitName>
+                    <benefitCapital>22 000</benefitCapital>
+                </benefit>
+                <benefit id="COB4">
+                    <benefitName>Invalidité ≥&gt;=66%</benefitName>
+                    <benefitCapital>22 000</benefitCapital>
+                </benefit>
+                <benefit id="COB20">
+                    <benefitName>PTIA</benefitName>
+                    <benefitCapital>22 000</benefitCapital>
+                </benefit>
+            </contractedBenefits>
+            <additionalData>
+                <additionalDatum id="EMAIL">Test</additionalDatum>
+                <additionalDatum id="RELACIONADO_HIPOTECA">NO</additionalDatum>
+                <additionalDatum id="TELEFONO">Test</additionalDatum>
+            </additionalData>
+        </application>
+        <crmQuestions/>
+    </generalData>
+    <questionnaire>
+        <form id="formulariosGenerales.ocupation">
+            <title>Profession</title>
+            <preamble></preamble>
+            <state>2</state>
+            <executedSections>
+                <section id="CT_Ocupacion">
+                    <title></title>
+                    <executedQuestions>
+                        <executedQuestion id="CT_Ocupacion">
+                            <questionText>Veuillez nous indiquer votre profession :</questionText>
+                            <answers>
+                                <answer id="catalogo.profesiones.trabajoSedentario.actuarioDeBancos">Actuaire bancaire</answer>
+                            </answers>
+                        </executedQuestion>
+                    </executedQuestions>
+                </section>
+            </executedSections>
+            <parcialRatings/>
+        </form>
+        <form id="profesiones.plantilla.directos">
+            <title>Actuaire bancaire</title>
+            <preamble></preamble>
+            <state>3</state>
+            <executedSections/>
+            <parcialRatings>
+                <benefit id="COB5" valueCode="1">
+                    <benefitName>Décès</benefitName>
+                    <values>
+                        <value>Standard</value>
+                    </values>
+                    <exclusions/>
+                    <medicalReports/>
+                    <medicalTests/>
+                    <temporalLoadings/>
+                    <additionalNotes/>
+                </benefit>
+                <benefit id="COB2" valueCode="1">
+                    <benefitName>Décès accidentel</benefitName>
+                    <values>
+                        <value>Standard</value>
+                    </values>
+                    <exclusions/>
+                    <medicalReports/>
+                    <medicalTests/>
+                    <temporalLoadings/>
+                    <additionalNotes/>
+                </benefit>
+                <benefit id="COB8" valueCode="1">
+                    <benefitName>Incapacité &lt; 30 j</benefitName>
+                    <values>
+                        <value>Standard</value>
+                    </values>
+                    <exclusions/>
+                    <medicalReports/>
+                    <medicalTests/>
+                    <temporalLoadings/>
+                    <additionalNotes/>
+                </benefit>
+                <benefit id="COB7" valueCode="1">
+                    <benefitName>Incapacité 30-90 j</benefitName>
+                    <values>
+                        <value>Standard</value>
+                    </values>
+                    <exclusions/>
+                    <medicalReports/>
+                    <medicalTests/>
+                    <temporalLoadings/>
+                    <additionalNotes/>
+                </benefit>
+                <benefit id="COB6" valueCode="1">
+                    <benefitName>Incapacité &gt; 90 j</benefitName>
+                    <values>
+                        <value>Standard</value>
+                    </values>
+                    <exclusions/>
+                    <medicalReports/>
+                    <medicalTests/>
+                    <temporalLoadings/>
+                    <additionalNotes/>
+                </benefit>
+                <benefit id="COB4" valueCode="1">
+                    <benefitName>Invalidité ≥&gt;=66%</benefitName>
+                    <values>
+                        <value>Standard</value>
+                    </values>
+                    <exclusions/>
+                    <medicalReports/>
+                    <medicalTests/>
+                    <temporalLoadings/>
+                    <additionalNotes/>
+                </benefit>
+                <benefit id="COB20" valueCode="crm.result.aceptar">
+                    <benefitName>PTIA</benefitName>
+                    <values>
+                        <value>Acceptée</value>
+                    </values>
+                    <exclusions/>
+                    <medicalReports/>
+                    <medicalTests/>
+                    <temporalLoadings/>
+                    <additionalNotes/>
+                </benefit>
+            </parcialRatings>
+        </form>
+        <form id="formulariosGenerales.lazour">
+            <title>Activité à risque</title>
+            <preamble></preamble>
+            <state>2</state>
+            <executedSections>
+                <section id="lazour_activities">
+                    <title></title>
+                    <executedQuestions>
+                        <executedQuestion id="lazour_activities">
+                            <questionText>Participez-vous à une des activités indiquées dans la liste ou pensez-vous y participer dans les 6 prochains mois ?</questionText>
+                            <answers>
+                                <answer id="activities_none">Aucun des antérieurs</answer>
+                            </answers>
+                        </executedQuestion>
+                    </executedQuestions>
+                </section>
+            </executedSections>
+            <parcialRatings/>
+        </form>
+        <form id="formulariosGenerales.physicalConstitution">
+            <title>Constitution physique</title>
+            <preamble>Veuillez indiquer le détail de votre constitution physique :</preamble>
+            <state>2</state>
+            <executedSections>
+                <section id="physicalConstitution_altura">
+                    <title></title>
+                    <executedQuestions>
+                        <executedQuestion id="physicalConstitution_altura">
+                            <questionText>Quelle est votre taille (en cm) ?</questionText>
+                            <answers>
+                                <answer id="">190</answer>
+                            </answers>
+                        </executedQuestion>
+                    </executedQuestions>
+                </section>
+                <section id="physicalConstitution_peso">
+                    <title></title>
+                    <executedQuestions>
+                        <executedQuestion id="physicalConstitution_peso">
+                            <questionText>Quel est votre poids (en Kg) ?</questionText>
+                            <answers>
+                                <answer id="">89</answer>
+                            </answers>
+                        </executedQuestion>
+                    </executedQuestions>
+                </section>
+            </executedSections>
+            <parcialRatings/>
+        </form>
+        <form id="formulariosGenerales.habitsTabacco">
+            <title>Habitudes: Tabac</title>
+            <preamble></preamble>
+            <state>2</state>
+            <executedSections>
+                <section id="habitsTabacco_tabacco">
+                    <title></title>
+                    <executedQuestions>
+                        <executedQuestion id="habitsTabacco_tabacco">
+                            <questionText>Fumez-vous plus de 10 cigarettes par jour ?</questionText>
+                            <answers>
+                                <answer id="respuesta_generica_no">Non</answer>
+                            </answers>
+                        </executedQuestion>
+                    </executedQuestions>
+                </section>
+            </executedSections>
+            <parcialRatings/>
+        </form>
+        <form id="formulariosGenerales.habitsAlcohol">
+            <title>Habitudes: Alcool</title>
+            <preamble></preamble>
+            <state>2</state>
+            <executedSections>
+                <section id="habitsAlcohol_alcohol">
+                    <title></title>
+                    <executedQuestions>
+                        <executedQuestion id="habitsAlcohol_alcohol">
+                            <questionText>Consommez-vous plus de 3 verres de boissons alcoolisées par jour ? (bière, vin, etc.)</questionText>
+                            <answers>
+                                <answer id="respuesta_generica_no">Non</answer>
+                            </answers>
+                        </executedQuestion>
+                    </executedQuestions>
+                </section>
+            </executedSections>
+            <parcialRatings/>
+        </form>
+        <form id="formulariosGenerales.disability">
+            <title>Arrêt de travail / Invalidité</title>
+            <preamble></preamble>
+            <state>2</state>
+            <executedSections>
+                <section id="disability_disability">
+                    <title></title>
+                    <executedQuestions>
+                        <executedQuestion id="disability_disability">
+                            <questionText>Au cours des 5 dernières années, avez-vous été en arrêt de travail pendant plus de 10 jours pour raison de santé ou vous a-t-on concédé une invalidité ?</questionText>
+                            <answers>
+                                <answer id="respuesta_generica_no">Non</answer>
+                            </answers>
+                        </executedQuestion>
+                    </executedQuestions>
+                </section>
+            </executedSections>
+            <parcialRatings/>
+        </form>
+        <form id="formulariosGenerales.values">
+            <title>Valeurs</title>
+            <preamble></preamble>
+            <state>2</state>
+            <executedSections>
+                <section id="values_values">
+                    <title></title>
+                    <executedQuestions>
+                        <executedQuestion id="values_values">
+                            <questionText>Avez-vous ou avez-vous eu des valeurs élevées de glucose, tension artérielle, cholestérol ou triglycérides ?</questionText>
+                            <answers>
+                                <answer id="respuesta_generica_no">Non</answer>
+                            </answers>
+                        </executedQuestion>
+                    </executedQuestions>
+                </section>
+            </executedSections>
+            <parcialRatings/>
+        </form>
+        <form id="formulariosGenerales.illnesOtras">
+            <title>Maladie</title>
+            <preamble></preamble>
+            <state>2</state>
+            <executedSections>
+                <section id="illnesOtras_illness">
+                    <title></title>
+                    <executedQuestions>
+                        <executedQuestion id="illnesOtras_illness">
+                            <questionText>Etes-vous atteint(e) d'une pathologie ou maladie nécessitant une surveillance médicale non déclarée jusqu'à présent ?</questionText>
+                            <answers>
+                                <answer id="respuesta_generica_no">Non</answer>
+                            </answers>
+                        </executedQuestion>
+                    </executedQuestions>
+                </section>
+            </executedSections>
+            <parcialRatings/>
+        </form>
+        <form id="formulariosGenerales.illnessAsociadas">
+            <title>Maladie</title>
+            <preamble></preamble>
+            <state>2</state>
+            <executedSections>
+                <section id="illnessAsociadas_illness">
+                    <title></title>
+                    <executedQuestions>
+                        <executedQuestion id="illnessAsociadas_illness">
+                            <questionText>Etes-vous ou avez-vous été atteint(e) de cancer ou tumeurs ou avez-vous subi un test de dépistage des sérologies, dont le résultat a été positif, portant en particulier sur les virus des hépatites B et C ou sur celui de l'immunodéficience humaine (HIV) ?</questionText>
+                            <answers>
+                                <answer id="respuesta_generica_no">Non</answer>
+                            </answers>
+                        </executedQuestion>
+                    </executedQuestions>
+                </section>
+            </executedSections>
+            <parcialRatings/>
+        </form>
+        <form id="formulariosGenerales.illnessGeneral">
+            <title>Maladie</title>
+            <preamble></preamble>
+            <state>2</state>
+            <executedSections>
+                <section id="illnessGeneral_illness">
+                    <title></title>
+                    <executedQuestions>
+                        <executedQuestion id="illnessGeneral_illness">
+                            <questionText>Etes-vous ou avez-vous été atteint(e) d'une des pathologies suivantes : angine de poitrine, infarctus du myocarde, cardiopathie, anxiété, dépression, stress, problèmes alimentaires, hernies discales, lumbagos, cervicalgies, sciatique, fractures, arthrose, ostéoporose, asthme, tuberculose, bronchites, maladies neurologiques ?</questionText>
+                            <answers>
+                                <answer id="respuesta_generica_no">Non</answer>
+                            </answers>
+                        </executedQuestion>
+                    </executedQuestions>
+                </section>
+            </executedSections>
+            <parcialRatings/>
+        </form>
+    </questionnaire>
+    <riskCalculatorData>
+        <riskCalculatorParameters>
+            <item id="VG_CHOLESTEROL_UNIT">Unité de cholestérol : mg/dl</item>
+            <item id="vg_sexo_candidato">Sexe :  Homme</item>
+            <item id="vg_edad_candidato">Age : 41 ans</item>
+            <item id="vg_fumador_candidato">Fumeur : Non</item>
+            <item id="vg_altura_candidato">Taille : 190 cm</item>
+            <item id="vg_bmi_candidato">Valeur IMC : 24,65</item>
+            <item id="VG_MEASUREMENT_SYSTEM">Système métrique :  International</item>
+            <item id="vg_peso_candidato">Poids : 89 kg</item>
+        </riskCalculatorParameters>
+        <totalResult>
+            <benefit id="COB5" valueCode="1">
+                <benefitName>Décès</benefitName>
+                <values>
+                    <value>Standard</value>
+                </values>
+                <exclusions/>
+                <medicalReports/>
+                <medicalTests/>
+                <temporalLoadings/>
+                <additionalNotes/>
+            </benefit>
+            <benefit id="COB2" valueCode="1">
+                <benefitName>Décès accidentel</benefitName>
+                <values>
+                    <value>Standard</value>
+                </values>
+                <exclusions/>
+                <medicalReports/>
+                <medicalTests/>
+                <temporalLoadings/>
+                <additionalNotes/>
+            </benefit>
+            <benefit id="COB8" valueCode="1">
+                <benefitName>Incapacité &lt; 30 j</benefitName>
+                <values>
+                    <value>Standard</value>
+                </values>
+                <exclusions/>
+                <medicalReports/>
+                <medicalTests/>
+                <temporalLoadings/>
+                <additionalNotes/>
+            </benefit>
+            <benefit id="COB7" valueCode="1">
+                <benefitName>Incapacité 30-90 j</benefitName>
+                <values>
+                    <value>Standard</value>
+                </values>
+                <exclusions/>
+                <medicalReports/>
+                <medicalTests/>
+                <temporalLoadings/>
+                <additionalNotes/>
+            </benefit>
+            <benefit id="COB6" valueCode="1">
+                <benefitName>Incapacité &gt; 90 j</benefitName>
+                <values>
+                    <value>Standard</value>
+                </values>
+                <exclusions/>
+                <medicalReports/>
+                <medicalTests/>
+                <temporalLoadings/>
+                <additionalNotes/>
+            </benefit>
+            <benefit id="COB4" valueCode="1">
+                <benefitName>Invalidité ≥&gt;=66%</benefitName>
+                <values>
+                    <value>Standard</value>
+                </values>
+                <exclusions/>
+                <medicalReports/>
+                <medicalTests/>
+                <temporalLoadings/>
+                <additionalNotes/>
+            </benefit>
+            <benefit id="COB20" valueCode="crm.result.aceptar">
+                <benefitName>PTIA</benefitName>
+                <values>
+                    <value>Acceptée</value>
+                </values>
+                <exclusions/>
+                <medicalReports/>
+                <medicalTests/>
+                <temporalLoadings/>
+                <additionalNotes/>
+            </benefit>
+        </totalResult>
+    </riskCalculatorData>
+    <thematicGroups/>
+    <finalResult>
+        <benefit id="COB5" valueCode="1">
+            <benefitName>Décès</benefitName>
+            <values>
+                <value>Standard</value>
+            </values>
+            <exclusions/>
+            <medicalReports/>
+            <medicalTests/>
+            <temporalLoadings/>
+            <additionalNotes/>
+        </benefit>
+        <benefit id="COB2" valueCode="1">
+            <benefitName>Décès accidentel</benefitName>
+            <values>
+                <value>Standard</value>
+            </values>
+            <exclusions/>
+            <medicalReports/>
+            <medicalTests/>
+            <temporalLoadings/>
+            <additionalNotes/>
+        </benefit>
+        <benefit id="COB8" valueCode="1">
+            <benefitName>Incapacité &lt; 30 j</benefitName>
+            <values>
+                <value>Standard</value>
+            </values>
+            <exclusions/>
+            <medicalReports/>
+            <medicalTests/>
+            <temporalLoadings/>
+            <additionalNotes/>
+        </benefit>
+        <benefit id="COB7" valueCode="1">
+            <benefitName>Incapacité 30-90 j</benefitName>
+            <values>
+                <value>Standard</value>
+            </values>
+            <exclusions/>
+            <medicalReports/>
+            <medicalTests/>
+            <temporalLoadings/>
+            <additionalNotes/>
+        </benefit>
+        <benefit id="COB6" valueCode="1">
+            <benefitName>Incapacité &gt; 90 j</benefitName>
+            <values>
+                <value>Standard</value>
+            </values>
+            <exclusions/>
+            <medicalReports/>
+            <medicalTests/>
+            <temporalLoadings/>
+            <additionalNotes/>
+        </benefit>
+        <benefit id="COB4" valueCode="1">
+            <benefitName>Invalidité ≥&gt;=66%</benefitName>
+            <values>
+                <value>Standard</value>
+            </values>
+            <exclusions/>
+            <medicalReports/>
+            <medicalTests/>
+            <temporalLoadings/>
+            <additionalNotes/>
+        </benefit>
+        <benefit id="COB20" valueCode="crm.result.ptia.aceptar">
+            <benefitName>PTIA</benefitName>
+            <values>
+                <value>Accordée</value>
+            </values>
+            <exclusions/>
+            <medicalReports/>
+            <medicalTests/>
+            <temporalLoadings/>
+            <additionalNotes/>
+        </benefit>
+    </finalResult>
+    <globalVariables>
+        <variable id="vg_altura_candidato" type="6">190</variable>
+        <variable id="vg_bmi_candidato" type="1">24,65</variable>
+        <variable id="vg_peso_candidato" type="1">89</variable>
+        <variable id="vg_fumador_candidato" type="4">respuesta_generica_no</variable>
+        <variable id="vg_euw_disability" type="6">1</variable>
+        <variable id="vg_illnesOtras" type="6">1</variable>
+        <variable id="vg_illnessAsociadas" type="6">1</variable>
+        <variable id="vg_illnessGeneral" type="6">1</variable>
+    </globalVariables>
+</tuw>

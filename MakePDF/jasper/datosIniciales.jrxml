@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="datosIniciales" language="groovy" pageWidth="555" pageHeight="802" columnWidth="555" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="8775c770-71a6-4dea-b5d8-b272038678bd">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="xPath">
+		<![CDATA[/tuw/generalData]]>
+	</queryString>
+	<field name="candidatoApellidos" class="java.lang.String">
+		<fieldDescription><![CDATA[candidate/surname]]></fieldDescription>
+	</field>
+	<field name="candidatoCP" class="java.lang.String">
+		<fieldDescription><![CDATA[candidate/postalCode]]></fieldDescription>
+	</field>
+	<field name="dossierCode" class="java.lang.String">
+		<fieldDescription><![CDATA[application/dossierCode]]></fieldDescription>
+	</field>
+	<field name="candidatoDomicilio" class="java.lang.String">
+		<fieldDescription><![CDATA[candidate/address]]></fieldDescription>
+	</field>
+	<field name="candidatoFechaNacimiento" class="java.lang.String">
+		<fieldDescription><![CDATA[candidate/birthDate]]></fieldDescription>
+	</field>
+	<field name="candidatoLocalidad" class="java.lang.String">
+		<fieldDescription><![CDATA[candidate/town]]></fieldDescription>
+	</field>
+	<field name="candidatoNombre" class="java.lang.String">
+		<fieldDescription><![CDATA[candidate/name]]></fieldDescription>
+	</field>
+	<field name="candidatoProvincia" class="java.lang.String">
+		<fieldDescription><![CDATA[candidate/province]]></fieldDescription>
+	</field>
+	<field name="candidatoSexo" class="java.lang.String">
+		<fieldDescription><![CDATA[candidate/gender]]></fieldDescription>
+	</field>
+	<field name="cliente" class="java.lang.String">
+		<fieldDescription><![CDATA[cliente]]></fieldDescription>
+	</field>
+	<field name="codigoExpediente" class="java.lang.String">
+		<fieldDescription><![CDATA[codigoExpediente]]></fieldDescription>
+	</field>
+	<field name="fechaHoraEntrevista" class="java.lang.String">
+		<fieldDescription><![CDATA[fechaHoraEntrevista]]></fieldDescription>
+	</field>
+	<field name="fechaSolicitudCRM" class="java.lang.String">
+		<fieldDescription><![CDATA[application/requestDate]]></fieldDescription>
+	</field>
+	<field name="nombreProductoCRM" class="java.lang.String">
+		<fieldDescription><![CDATA[application/productName]]></fieldDescription>
+	</field>
+	<field name="numeroSolicitudCRM" class="java.lang.String">
+		<fieldDescription><![CDATA[application/requestNumber]]></fieldDescription>
+	</field>
+	<field name="duration" class="java.lang.String">
+		<fieldDescription><![CDATA[application/duration]]></fieldDescription>
+	</field>
+	<field name="plazoDiasModificacion" class="java.lang.String">
+		<fieldDescription><![CDATA[plazoDiasModificacion]]></fieldDescription>
+	</field>
+	<field name="producto" class="java.lang.String">
+		<fieldDescription><![CDATA[producto]]></fieldDescription>
+	</field>
+	<field name="type" class="java.lang.String">
+		<fieldDescription><![CDATA[application/type]]></fieldDescription>
+	</field>
+	<field name="euwCodigo" class="java.lang.String">
+		<fieldDescription><![CDATA[/tuw/tuwMetaData/euwReferenceCode]]></fieldDescription>
+	</field>
+	<field name="policyNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[/tuw/generalData/application/policyNumber]]></fieldDescription>
+	</field>
+	<field name="certificateNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[/tuw/generalData/application/certificateNumber]]></fieldDescription>
+	</field>
+	<field name="subpolicyNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[/tuw/generalData/application/subpolicyNumber]]></fieldDescription>
+	</field>
+	<field name="movementNumber" class="java.lang.String">
+		<fieldDescription><![CDATA[/tuw/generalData/application/movementNumber]]></fieldDescription>
+	</field>
+	<detail>
+		<band height="222" splitType="Immediate">
+			<textField>
+				<reportElement uuid="d36f07f8-9cc8-4b34-993d-8d9a3e5a6faa" x="126" y="46" width="150" height="17"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{candidatoFechaNacimiento}!=null?$F{candidatoFechaNacimiento}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="21318a3e-53a8-4088-92b3-1e7a55556a10" x="276" y="97" width="125" height="17"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{cPostal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="9d4ae6c7-067d-4307-bf58-100be3933eb0" x="404" y="97" width="150" height="17"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{candidatoCP}!=null?$F{candidatoCP}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ebf047a2-b6e8-4c6c-95c7-eb9f1bcf5f10" x="126" y="63" width="430" height="17"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{candidatoDomicilio}!=null?$F{candidatoDomicilio}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="5bc18954-4b36-4a72-a1ad-32fc55b5c56f" x="126" y="30" width="430" height="17"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[($F{candidatoNombre}!=null?$F{candidatoNombre}:"").concat(" ").concat($F{candidatoApellidos}!=null?$F{candidatoApellidos}:"")]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a7cf9c88-3750-4ff1-97ff-f567d94de79f" x="1" y="131" width="125" height="17"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{numeroExpediente}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="776f031c-c6ed-45dc-8982-515e1a65afd8" x="1" y="80" width="125" height="17"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{localidad}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="7e07e6ef-f664-49cc-945a-d6195e7f0206" x="126" y="97" width="150" height="17"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{candidatoProvincia}!=null?$F{candidatoProvincia}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="48936509-f8a9-41a6-8364-dbad826c6cbf" x="126" y="131" width="150" height="17"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dossierCode}!=null?$F{dossierCode}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="83db8610-b54a-4225-9435-a6fae6778c22" x="404" y="131" width="150" height="17"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{fechaSolicitudCRM}!=null?$F{fechaSolicitudCRM}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="44e026b1-c036-4161-b8a8-cd71dd793ddc" x="401" y="47" width="150" height="17"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{candidatoSexo}!=null?$F{candidatoSexo}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="f9761201-6e85-46f9-94ae-46c1926b3dd1" x="1" y="63" width="125" height="17"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{domicilio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="30b15c2b-104e-43e0-88b0-55dca65b8afd" x="1" y="10" width="218" height="20"/>
+				<textElement>
+					<font size="12" isBold="true" isUnderline="true"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{datosIniciales}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="a446c16e-6a85-42a5-a9d3-2a1637294074" x="276" y="131" width="125" height="17"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{fechaSolicitud}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="bf18ed86-843b-4f68-8d09-43d361f608e9" x="276" y="47" width="125" height="17"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{sexo}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="533e910f-5df9-422c-88f2-e278a990ee82" x="126" y="114" width="150" height="17"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nombreProductoCRM}!=null?$F{nombreProductoCRM}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="ba517528-0909-4dbe-bbc0-14a633feaf35" x="404" y="148" width="150" height="17"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{duration}!=null?$F{duration}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2687aa3f-bb66-4fad-b76e-63e21d5d90a4" x="1" y="114" width="125" height="17"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{nombreProducto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4488321f-a774-4131-b732-aff41a33fb70" x="1" y="46" width="125" height="17"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{fechaNacimiento}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="77443182-0ce1-477c-be96-125f6c1923bd" x="1" y="30" width="125" height="17"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{nombreYApellidos}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="1d9576b3-e259-4c51-9dad-f6e73c206c54" x="276" y="148" width="125" height="17"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{duracion}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="4752574a-5394-43d3-96b1-d86c9819ef65" x="1" y="97" width="125" height="17"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{provincia}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="fb40b219-43c0-4055-b9c6-90b4e13c042d" x="126" y="80" width="150" height="17"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{candidatoLocalidad}!=null?$F{candidatoLocalidad}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="481bfdcf-1e19-4937-bce6-a0ed3a0fb3cb" x="126" y="148" width="150" height="17"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{numeroSolicitudCRM}!=null?$F{numeroSolicitudCRM}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="2d54410d-cbb6-44fd-8efe-fb437856308f" x="1" y="148" width="125" height="17"/>
+				<textElement>
+					<font size="9"/>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$R{numeroSolicitud}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="53aebd54-d489-48cc-9ac7-893659d7f196" x="0" y="197" width="126" height="17"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{euwCodigo}!=null?$R{euwCodigo}:""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="68baa735-a609-4278-9af0-f2dc11c2bb82" x="127" y="164" width="149" height="17" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{policyNumber}!=null?$F{policyNumber}:""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="e61ca1da-c416-4d85-b0b0-8e3512e34548" x="404" y="164" width="150" height="17" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subpolicyNumber}!=null?$F{subpolicyNumber}:""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="ee556a6d-82bb-4103-8a11-4eb474009839" x="1" y="180" width="125" height="17"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{certificateNumber}!=null?$R{certificateNumber}:""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="268fa93b-0918-4e8b-b8c5-3e117f6931bf" x="127" y="180" width="149" height="17" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{certificateNumber}!=null?$F{certificateNumber}:""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="8d4dcd68-b844-4662-bc45-06742e76ac55" x="276" y="164" width="129" height="17"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subpolicyNumber}!=null?$R{subpolicyNumber}:""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="a4de0962-ee11-4f02-a282-0b77e1ce2e0d" x="276" y="180" width="129" height="17"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{movementNumber}!=null?$R{movementNumber}:""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="448c3257-ac27-40a7-8d73-92a9ed71889a" x="404" y="180" width="150" height="17" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{movementNumber}!=null?$F{movementNumber}:""]]></textFieldExpression>
+			</textField>
+			<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+				<reportElement uuid="0b00a06e-4f78-48df-82bc-69e2bf6dc848" x="1" y="164" width="125" height="17"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{policyNumber}!=null?$R{policyNumber}:""]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement uuid="232fdab4-0770-401a-94a8-93c52de4ac8e" x="127" y="197" width="149" height="17" isRemoveLineWhenBlank="true"/>
+				<textElement>
+					<paragraph lineSpacing="Single"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{euwCodigo}!=null?$F{euwCodigo}:""]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+</jasperReport>
